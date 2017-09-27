@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import map from 'lodash.map';
 import reduce from 'lodash.reduce';
@@ -75,20 +76,20 @@ function shouldIgnoreLocation(loc: LngLat): boolean {
 
 export default class HeatmapLayer extends MapLayer {
   static propTypes = {
-    points: React.PropTypes.array.isRequired,
-    longitudeExtractor: React.PropTypes.func.isRequired,
-    latitudeExtractor: React.PropTypes.func.isRequired,
-    intensityExtractor: React.PropTypes.func.isRequired,
-    fitBoundsOnLoad: React.PropTypes.bool,
-    fitBoundsOnUpdate: React.PropTypes.bool,
-    onStatsUpdate: React.PropTypes.func,
+    points: PropTypes.array.isRequired,
+    longitudeExtractor: PropTypes.func.isRequired,
+    latitudeExtractor: PropTypes.func.isRequired,
+    intensityExtractor: PropTypes.func.isRequired,
+    fitBoundsOnLoad: PropTypes.bool,
+    fitBoundsOnUpdate: PropTypes.bool,
+    onStatsUpdate: PropTypes.func,
     /* props controlling heatmap generation */
-    max: React.PropTypes.number,
-    radius: React.PropTypes.number,
-    maxZoom: React.PropTypes.number,
-    minOpacity: React.PropTypes.number,
-    blur: React.PropTypes.number,
-    gradient: React.PropTypes.object
+    max: PropTypes.number,
+    radius: PropTypes.number,
+    maxZoom: PropTypes.number,
+    minOpacity: PropTypes.number,
+    blur: PropTypes.number,
+    gradient: PropTypes.object
   };
 
   createLeafletElement() {
